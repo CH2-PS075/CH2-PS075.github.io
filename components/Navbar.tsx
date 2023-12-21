@@ -23,6 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
             } else {
                 setHideNavbar(false);
             }
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             lastScrollY = currentScrollY;
         };
 
