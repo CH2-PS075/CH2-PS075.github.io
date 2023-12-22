@@ -2,10 +2,37 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
 
 interface NavbarProps {
     links: { href: string; label: string; to: string }[];
 }
+
+const navbarVariants = {
+    hidden: {
+        opacity: 0,
+        y: -100
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.1
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: {
+        opacity: 0,
+        y: -50
+    },
+    visible: {
+        opacity: 1,
+        y: 0
+    }
+};
 
 const Navbar: React.FC<NavbarProps> = ({ links }) => {
     const [hideNavbar, setHideNavbar] = useState(false);
@@ -35,16 +62,24 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
     }, []);
 
     return (
-        <nav
+        <motion.nav
+            initial="hidden"
+            animate="visible"
+            variants={navbarVariants}
             className={`bg-primary navbar-transition fixed w-full z-50 top-0 left-0 px-2 sm:px-4 py-2 drop-shadow ${hideNavbar ? 'navbar-hidden' : ''
                 }`}
         >
             <div className="px-3 md:px-12 max-w-7xl container flex flex-wrap items-center justify-between mx-auto">
-                <Link to="/" className="font-bold text-2xl text-white">
-                    TalentHub
-                </Link>
-                <button
-                    className="text-white md:hidden"
+                <motion.div
+                    variants={itemVariants}
+                >
+                    <Link to="/" className="font-bold text-2xl text-white cursor-pointer">
+                        TalentHub
+                    </Link>
+                </motion.div>
+                <motion.button
+                    variants={itemVariants}
+                    className='md:hidden'
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     <svg
@@ -53,7 +88,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="currentColor"
+                        stroke="#FFFFFF"
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -63,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                         <line x1="4" x2="20" y1="6" y2="6" />
                         <line x1="4" x2="20" y1="18" y2="18" />
                     </svg>
-                </button>
+                </motion.button>
                 <div
                     className={`${mobileMenuOpen ? 'block' : 'hidden'
                         } w-full md:flex md:w-auto md:order-1`}
@@ -71,7 +106,9 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                 >
                     <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-10 md:mt-0 md:border-0">
                         {links.map(({ href, label, to }) => (
-                            <li key={href} className="py-1">
+                            <motion.li key={href} className="py-1"
+                                variants={itemVariants}
+                                transition={{ duration: 0.5 }}>
                                 <Link
                                     to={to}
                                     smooth={true}
@@ -82,15 +119,17 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                                 >
                                     {label}
                                 </Link>
-                            </li>
+                            </motion.li>
                         ))}
-                        <button className="relative border-2 border-carrot text-carrot rounded-md bg-transparent px-3 py-1 font-bold text- transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-carrot before:transition-transform before:duration-300 before:content-[''] hover:text-white hover:fon-bold before:hover:scale-x-100">
+                        <motion.button
+                            variants={itemVariants}
+                            transition={{ duration: 0.5 }} className="relative border-2 border-carrot text-carrot rounded-md bg-transparent px-3 py-1 font-bold text- transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-carrot before:transition-transform before:duration-300 before:content-[''] hover:text-white hover:fon-bold before:hover:scale-x-100">
                             Download
-                        </button>
+                        </motion.button>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 

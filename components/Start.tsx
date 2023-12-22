@@ -1,6 +1,35 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 import backgroundImage from '../public/assets/background.svg';
+import { motion } from 'framer-motion';
+
+const textVariants = {
+    hidden: {
+        opacity: 0,
+        x: -100
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.8
+        }
+    }
+};
+
+const imageVariants = {
+    hidden: {
+        opacity: 0,
+        x: 100
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.8
+        }
+    }
+};
 
 const Start = () => {
     return (
@@ -10,17 +39,22 @@ const Start = () => {
         >
             <div className="max-w-7xl px-12 container mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bor">
                 <div className="grid grid-cols-2 gap-10 lg:gap-2 justify-items-center text-white px-3">
-                    <div className="flex flex-col justify-center h-full lg:col-span-1 col-span-full text-center lg:text-left">
-                        <h2 className="font-light text-lg md:text-xl">
-                            Selamat datang di
-                        </h2>
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={textVariants} className="flex flex-col justify-center h-full lg:col-span-1 col-span-full text-center lg:text-left">
+                        <h2 className="font-light text-lg md:text-xl">Selamat datang di</h2>
                         <h2 className="font-bold text-4xl md:text-6xl">TalentHub</h2>
                         <p className="font-light text-sm md:text-base">
                             Aplikasi yang buat acaramu lebih nyaman. Siap bantu kebutuhanmu,
                             kapan pun, di mana pun.
                         </p>
-                    </div>
-                    <div className="flex lg:justify-self-end h-full lg:col-span-1 col-span-full">
+                    </motion.div>
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={imageVariants}
+                        className="flex lg:justify-self-end h-full lg:col-span-1 col-span-full">
                         <div className="bg-white rounded-full p-8 lg:p-10 aspect-square h-44 lg:h-64">
                             <Image
                                 src="/assets/logo.svg"
@@ -29,11 +63,11 @@ const Start = () => {
                                 alt="logo"
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Start
+export default Start;

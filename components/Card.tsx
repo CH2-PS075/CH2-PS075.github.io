@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react'
+import React from 'react';
 
 interface CardProps {
     image: string;
@@ -25,6 +25,6 @@ const Card: React.FC<CardProps> = ({ image, title, desc }) => {
             </div>
         </div>
     );
-}
+};
 
-export default Card
+export default Card;

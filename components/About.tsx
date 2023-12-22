@@ -44,21 +44,21 @@ const About = () => {
                             <Card
                                 image="/assets/icon-face.svg"
                                 title="Verifikasi Wajah"
-                                desc="Lorem ipsum dolor sit amet eros duis curae massa. Lorem mi primis et elementum quis suscipit aliquam accumsan non potenti."
+                                desc="Memudahkan proses registrasi talent dengan menggunakan validasi wajah dengan cepat."
                             />
                         </div>
                         <div className='col-span-full lg:col-span-1 flex justify-center'>
                             <Card
                                 image="/assets/icon-robot.svg"
                                 title="ChatBot"
-                                desc="Lorem ipsum dolor sit amet eros duis curae massa. Lorem mi primis et elementum quis suscipit aliquam accumsan non potenti."
+                                desc="User mendapatkan jawaban tentang talenta dengan cepat menggunakan fitur chatbot."
                             />
                         </div>
                         <div className='col-span-full lg:col-span-1 flex justify-center'>
                             <Card
                                 image="/assets/icon-user-search.svg"
                                 title="Rekomendasi Talent"
-                                desc="Lorem ipsum dolor sit amet eros duis curae massa. Lorem mi primis et elementum quis suscipit aliquam accumsan non potenti."
+                                desc="Membantu pengguna menemukan talent yang mereka cari dengan fitur rekomendasi yang kami miliki."
                             />
                         </div>
                     </div>

@@ -33,10 +33,7 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link
-                                        href=""
-                                        className="hover:text-slate-400"
-                                    >
+                                    <Link href="" className="hover:text-slate-400">
                                         Product
                                     </Link>
                                 </li>
@@ -48,18 +45,12 @@ const Footer = () => {
                             </h2>
                             <ul className="text-dark font-medium">
                                 <li className="mb-4">
-                                    <Link
-                                        href="#"
-                                        className="hover:text-slate-400"
-                                    >
+                                    <Link href="#" className="hover:text-slate-400">
                                         Mitra
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link
-                                        href="#"
-                                        className="hover:text-slate-400"
-                                    >
+                                    <Link href="#" className="hover:text-slate-400">
                                         Talent
                                     </Link>
                                 </li>
@@ -94,10 +85,7 @@ const Footer = () => {
                         . All Rights Reserved.
                     </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
-                        <Link
-                            href="#"
-                            className="text-dark hover:text-slate-400"
-                        >
+                        <Link href="#" className="text-dark hover:text-slate-400">
                             <svg
                                 className="w-4 h-4"
                                 aria-hidden="true"
@@ -113,10 +101,7 @@ const Footer = () => {
                             </svg>
                             <span className="sr-only">Facebook page</span>
                         </Link>
-                        <Link
-                            href="#"
-                            className="text-dark hover:text-slate-400 ms-5"
-                        >
+                        <Link href="#" className="text-dark hover:text-slate-400 ms-5">
                             <svg
                                 className="w-4 h-4"
                                 aria-hidden="true"
@@ -128,10 +113,7 @@ const Footer = () => {
                             </svg>
                             <span className="sr-only">Discord community</span>
                         </Link>
-                        <Link
-                            href="#"
-                            className="text-dark hover:text-slate-400 ms-5"
-                        >
+                        <Link href="#" className="text-dark hover:text-slate-400 ms-5">
                             <svg
                                 className="w-4 h-4"
                                 aria-hidden="true"
