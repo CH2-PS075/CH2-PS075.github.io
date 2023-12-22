@@ -21,7 +21,7 @@ const About = () => {
                 </div>
                 <div className="flex md:w-1/2 lg:w-full justify-center">
                     <Image
-                        src="/assets/poster-talenthub.png"
+                        src="/assets/poster.svg"
                         width={400}
                         height={400}
                         alt="poster"
