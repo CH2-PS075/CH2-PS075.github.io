@@ -46,12 +46,12 @@ const Footer = () => {
                             <ul className="text-dark font-medium">
                                 <li className="mb-4">
                                     <Link href="#" className="hover:text-slate-400">
-                                        Mitra
+                                        Cari Talent
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="#" className="hover:text-slate-400">
-                                        Talent
+                                        Jadi Talent
                                     </Link>
                                 </li>
                             </ul>

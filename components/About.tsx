@@ -58,7 +58,7 @@ const About = () => {
                             <Card
                                 image="/assets/icon-user-search.svg"
                                 title="Rekomendasi Talent"
-                                desc="Membantu pengguna menemukan talent yang mereka cari dengan fitur rekomendasi yang kami miliki."
+                                desc="Membantu pengguna menemukan talent yang mereka cari dengan fitur rekomendasi."
                             />
                         </div>
                     </div>
